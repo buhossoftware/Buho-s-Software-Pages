@@ -1,0 +1,145 @@
+/* Búho's Software — estilos compartidos. Paleta cálida: crema, beige, ámbar y marrón. */
+:root {
+  --cream: #fbf6ec;
+  --cream-2: #f6efdf;
+  --beige: #ede4d0;
+  --beige-2: #e3d5b8;
+  --ink: #33261a;
+  --ink-soft: #5d4c38;
+  --amber: #c07f1f;
+  --amber-dark: #9a6414;
+  --amber-soft: #f3e3c2;
+  --dark: #2f241a;
+  --white: #fffdf8;
+  --line: #ddd0b6;
+  --radius: 16px;
+  --shadow: 0 6px 24px rgba(51, 38, 26, .10);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 17px;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--amber-dark); }
+h1, h2, h3 { line-height: 1.25; color: var(--ink); }
+h1 { font-size: 2rem; margin: .4rem 0 .8rem; }
+h2 { font-size: 1.55rem; margin-top: 2.5rem; }
+h3 { font-size: 1.15rem; }
+p { margin: .5rem 0 1rem; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.eyebrow {
+  text-transform: uppercase; letter-spacing: .12em;
+  font-size: .78rem; font-weight: 700; color: var(--amber-dark);
+  margin: 0;
+}
+.lead { font-size: 1.12rem; color: var(--ink-soft); }
+
+/* Header / nav */
+header.site {
+  background: var(--dark); color: var(--cream);
+  position: sticky; top: 0; z-index: 10;
+}
+header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; padding-top: .8rem; padding-bottom: .8rem; }
+.brand { color: var(--cream); text-decoration: none; font-weight: 800; font-size: 1.25rem; }
+.brand small { display: block; font-size: .75rem; font-weight: 400; color: var(--beige-2); letter-spacing: .04em; }
+nav.main { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-left: auto; }
+nav.main a {
+  color: var(--cream); text-decoration: none; font-weight: 600;
+  padding: .35rem .55rem; border-radius: 999px; font-size: .95rem;
+}
+nav.main a:hover, nav.main a[aria-current="page"] { background: rgba(251, 246, 236, .16); color: #fff; }
+
+/* Hero */
+.hero { background: var(--cream-2); border-bottom: 1px solid var(--line); padding: 2.5rem 0 2rem; }
+.hero .sectors { color: var(--ink-soft); font-weight: 600; font-size: .95rem; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.stats li {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: .9rem .7rem; text-align: center;
+}
+.stats strong { display: block; font-size: 1.35rem; color: var(--amber-dark); }
+.stats span { font-size: .85rem; color: var(--ink-soft); }
+
+/* Buttons */
+.btn {
+  display: inline-block; background: var(--amber); color: #fff;
+  text-decoration: none; font-weight: 700; padding: .8rem 1.4rem;
+  border-radius: 999px; margin: .4rem .4rem .4rem 0;
+}
+.btn:hover { background: var(--amber-dark); }
+.btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: var(--cream); }
+
+/* Cards / sections */
+.card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.25rem 1.4rem; margin: 1rem 0;
+  box-shadow: var(--shadow);
+}
+.card.beige { background: var(--beige); }
+.grid-2 { display: grid; gap: 1rem; }
+@media (min-width: 700px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+.before, .after { border-radius: var(--radius); padding: 1.25rem 1.4rem; }
+.before { background: #f3e8d8; border: 1px solid var(--line); }
+.after { background: #e8e2c8; border: 1px solid #cbbf9a; }
+.before blockquote, .after ul { margin: .5rem 0; }
+.chat { font-style: italic; color: var(--ink-soft); }
+.steps { counter-reset: step; list-style: none; padding: 0; display: grid; gap: 1rem; }
+@media (min-width: 700px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.steps li {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.25rem;
+}
+.steps li::before {
+  counter-increment: step; content: "0" counter(step);
+  display: block; font-weight: 800; font-size: 1.4rem; color: var(--amber-dark);
+}
+.check { list-style: none; padding: 0; }
+.check li { padding-left: 1.7rem; position: relative; margin: .5rem 0; }
+.check li::before { content: "✓"; position: absolute; left: 0; color: var(--amber-dark); font-weight: 800; }
+.tag {
+  display: inline-block; background: var(--amber-soft); color: var(--amber-dark);
+  font-weight: 700; font-size: .8rem; padding: .2rem .7rem; border-radius: 999px;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.price-big { font-size: 2.1rem; font-weight: 800; color: var(--ink); margin: .2rem 0; }
+.price-old { text-decoration: line-through; color: var(--ink-soft); }
+.price-table { width: 100%; border-collapse: collapse; margin: .8rem 0; }
+.price-table td { padding: .45rem 0; border-bottom: 1px solid var(--line); }
+.price-table td:last-child { text-align: right; font-weight: 700; white-space: nowrap; }
+.price-table tr.total td { font-size: 1.15rem; border-bottom: none; }
+.note { background: var(--amber-soft); border-radius: var(--radius); padding: 1rem 1.2rem; }
+.faq details { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1.1rem; margin: .6rem 0; }
+.faq summary { font-weight: 700; cursor: pointer; }
+
+/* Quién soy / foto — fondo oscuro y cálido, bordes redondeados, nunca blanco puro */
+.photo-frame {
+  background: var(--dark); border-radius: 20px; padding: 1.2rem;
+  box-shadow: var(--shadow); max-width: 420px; margin: 0 auto;
+}
+.photo-frame img { border-radius: 14px; width: 100%; }
+.photo-frame figcaption { color: var(--beige-2); text-align: center; font-size: .9rem; padding-top: .8rem; }
+.bio { display: grid; gap: 1.5rem; align-items: start; }
+@media (min-width: 700px) { .bio { grid-template-columns: 340px 1fr; } }
+
+/* Footer */
+footer.site { background: var(--dark); color: var(--cream); margin-top: 3rem; padding: 2rem 0; }
+footer.site a { color: var(--amber-soft); }
+footer.site .wrap { display: grid; gap: 1rem; }
+@media (min-width: 700px) { footer.site .wrap { grid-template-columns: 1fr 1fr; } }
+footer.site p, footer.site li { font-size: .95rem; color: #e8dcc4; }
+footer.site ul { list-style: none; padding: 0; margin: 0; }
+footer.site li { margin: .3rem 0; }
+main { padding-bottom: 1rem; }
+
+/* Foto circular de Tony (imagen ya recortada en círculo) */
+.photo-frame.circle { background: transparent; box-shadow: none; padding: 0; max-width: 360px; }
+.photo-frame.circle img { border-radius: 50%; }
+.photo-frame.circle figcaption { color: var(--ink-soft); }
